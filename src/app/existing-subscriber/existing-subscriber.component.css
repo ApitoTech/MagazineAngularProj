@@ -1,0 +1,85 @@
+.main {
+    margin-top: 70px; /* Add a top margin to avoid content overlay */
+     padding-top: 16px;
+  }
+  
+  @media screen and (max-width:475px) {
+  
+    .main {
+  
+      margin-top: 100px; /* Add a top margin to avoid content overlay */
+    }
+  }
+  @media screen and (max-width:650px) {
+  
+    .main {
+  
+      padding-top: 25px;
+    }
+  
+  }
+  
+  .container {
+  
+    margin:  auto;
+    width: 1250px;
+    background: rgb(196, 196, 196, 0.4);
+    height: 90vh;
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  
+  }
+  
+  @media screen and (max-width: 1300px) {
+  
+    .container{
+  
+      margin:0px auto;
+      width: 80%;
+    }
+  
+  }
+  
+  
+  
+  .content {
+    height: 80%;
+    background: white;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+  }
+  
+  
+  .item{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    text-align: center;
+  }
+  
+  .item button{
+    background: #FFD332;
+    margin: 10px;
+  
+  }
+  mat-radio-button:nth-child(1){
+    margin-top: 5%;
+    margin-left: 20%;
+    float:left
+  }
+  
+  mat-radio-button:nth-child(2){
+    margin-top: 5%;
+    margin-right: 20%;
+    float:right
+  }

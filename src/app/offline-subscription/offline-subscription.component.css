@@ -1,0 +1,102 @@
+.main {
+    margin-top: 70px; /* Add a top margin to avoid content overlay */
+     padding-top: 16px;
+  }
+  
+  @media screen and (max-width:475px) {
+  
+    .main {
+  
+      margin-top: 100px; /* Add a top margin to avoid content overlay */
+    }
+  }
+  @media screen and (max-width:650px) {
+  
+    .main {
+  
+      padding-top: 25px;
+    }
+  
+  }
+  .container {
+      
+    margin:  auto;
+    width: 1250px;
+    background: rgb(196, 196, 196, 0.4);
+    height: 90vh;
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  
+  }
+  
+  @media screen and (max-width: 1300px) {
+  
+    .container{
+  
+      margin:0px auto;
+      width: 80%;
+    }
+  
+  }
+  
+  .content {
+    height: 80%;
+    background: white;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    border: 1px solid #B22222; 
+    overflow: scroll;
+  }
+
+  .content button{
+    background: #FFD332;
+    margin: 1px;
+   
+  }
+
+  .header-text{
+    margin-left:250px;
+    color:#909090;
+  }
+
+  .field-set{
+    border: 1px solid #FFD332; 
+    margin: 5px;
+    padding: 2px;
+  }
+
+  .wrapper .form_container .form_item{
+    margin-bottom: 25px;
+  }
+  
+  .form_wrap.userdetails,
+  .form_wrap.select_box{
+    display: flex;
+  }
+  
+  .form_wrap.userdetails .form_item,
+  .form_wrap.select_box .form_item{
+    width: 50%;
+  }
+
+  .wrapper .form_container .form_item span{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form_item input[type="text"],
+  .form_item select{
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+  }

@@ -1,0 +1,211 @@
+<div class="main">
+    <div class="container">
+        <div class="content">
+            
+            <div *ngIf="step == 1">
+                <h3 class="header-text">Offline Subscription / Admin Entry</h3>
+            <fieldset class="field-set">
+                <legend class="float-none w-auto p-2">Personal Details</legend>
+                
+                <div class="form_wrap userdetails">
+
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <input type="text"  name="mobileno"  placeholder="Mobile No" />
+                    </div>
+                  
+                  
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <input type="text"  name="email"  placeholder="Email" />
+                    </div>
+                  
+                  </div>
+
+                  <div class="form_wrap userdetails">
+
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <input type="text"  name="firstname"  placeholder="First Name" />
+                    </div>
+                  
+                  
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <input type="text"  name="lastname"  placeholder="Last Name" />
+                    </div>
+                  
+                  </div>
+
+                  <div class="form_wrap select_box">
+
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <select name="Union">
+                        <option selected disabled>Union</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        </select>
+                    </div>
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 30%;" >*</font>
+                        <input type="text"  name="dateofbirth"  placeholder="Date of Birth(DD/MM/YYYY)" />
+                   </div>
+
+                  </div>
+
+                  <div class="form_wrap select_box">
+                    <div class="form_item">
+                        <select name="Occupation" style="margin-top: 20px;">
+                        <option selected disabled>Occupation</option>
+                        <option>Indivisual</option>
+                        <option>Society Employee</option>
+                        <option>DCM Student</option>
+                        <option>Student</option>
+                        </select>
+                    </div>
+                    <div class="form_item">
+                        <input type="text" style="margin-top: 20px;" name="designation"  placeholder="Designation/Qualification" />
+                   </div>
+                  </div>
+                  
+                  <div class="form_wrap userdetails">
+                    <div class="form_item">
+                        <input type="text" style="margin-top: 20px;" name="society"  placeholder="Society" />
+                    </div>
+                  </div>
+            </fieldset>    
+
+            <fieldset class="field-set">
+                <legend class="float-none w-auto p-2">Address Details</legend>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Address"/>
+                     
+                    </div>
+
+                    <div class="form_item">
+                      <input type="text" style="margin-top: 22px;" placeholder="Village"/>
+                     
+                    </div>
+                  </div>
+                
+                  <div class="form_wrap userdetails">
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Pincode"/>
+                    
+                    </div>
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Talluk"/>
+                     
+                    </div>
+                    
+                  </div>  
+                    
+                  <div class="form_wrap userdetails">
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="District"/>
+                      
+                   
+                    </div>
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="State"/>
+                     
+                    </div>
+                    </div>
+                  
+            </fieldset>
+
+            <!--Referened by-->
+            <fieldset class="field-set">
+                <legend class="float-none w-auto p-2">Reference</legend>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Reffered by"/>
+                     </div>
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Designation"/>
+                     </div>
+                    </div>
+            </fieldset>
+            <button type="submit" (click)="next()" class="btn btn-lg mt-3"  style="margin-left: 40%;"  >Next</button> 
+        </div>
+        <div *ngIf="step == 2">
+            <h3 class="header-text">Offline Subscription / Admin Entry</h3>
+            <fieldset class="field-set">
+                <legend class="float-none w-auto p-2">Subscription Details</legend>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                      <font color="red" style="margin-right: 90%;" >*</font>
+                      <input type="text"   placeholder="Subscription Start date"/>
+                     
+                    </div>
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 90%;" >*</font>
+                        <select name="choosePlan" >
+                            <option selected disabled>Choose Plan</option>
+                            <option>One Year Plan</option>
+                            <option>5 Year Plan</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 90%;" >*</font>
+                        <select name="Payment Type" >
+                            <option selected disabled>Payment Type</option>
+                            <option>Cheque</option>
+                           
+                        </select>
+                    </div>
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 90%;" >*</font>
+                        <input type="text"   placeholder="Invoice Number"/>
+                      </div>
+                </div>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 90%;" >*</font>
+                        <input type="text"   placeholder="Cheque Number"/>
+                    </div>
+                    <div class="form_item">
+                        <button type="button"> Attach Invoice/Cheque </button> 
+                      </div>
+                </div>
+                <div class="form_wrap userdetails">
+                    <div class="form_item">
+                        <font color="red" style="margin-right: 90%;" >*</font>
+                        <input type="text"   placeholder="Date of invoice /Date of cheque"/>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-lg mt-3" (click)="submit()" style="margin-left: 40%;"  >Submit</button> 
+        </div>
+
+        <div *ngIf="step == 3">
+            <fieldset >
+                 
+                <h3 class="header-text"> ಚಂದಾದಾರಿಕೆಗೆ ಧನ್ಯವಾದಗಳು</h3>
+                <div class="row">
+                  <div class="col-6">
+                      <p align="left"> Invoice No.: 001</p>
+                      <p align="left">Phone Number: 86868767868 </p>
+                      <p align="left">Email Address: customer@gfmail.com </p>
+                      <p align="left">Subscription Start Date: 23/03/2022 </p>
+                      <p align="left">Subscription End Date:  23/03/2023 </p>
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+        </div>
+    </div>
+</div>

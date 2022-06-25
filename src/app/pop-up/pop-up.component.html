@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="modal-header">
+       <span style="margin-left: 80%;color: white;">Close</span> 
+        <button type="button" class="btn-close" style="color: white;" data-bs-dismiss="modal" aria-label="Close" (click)="closeDialog()"></button>
+    </div>
+    <div class="modal-title">
+        <h2 >ಹೊಸ ಚಂದಾದಾರರು</h2> 
+        <h3 >New User ?</h3> 
+     </div>
+     <div class="main-class">
+        <!-- <input type="radio" checked="checked" />Yes/ಹೌದು<br/>
+        <input  type="radio" />No,This is for Renewal / ಇಲ್ಲ, ಇದು ನವೀಕರಣಕ್ಕಾಗಿ -->
+        <input type="radio" name='register' checked="checked" [(ngModel)]="radioData" value="newRegister" />Yes<br/>
+        <input  type="radio" name='register' [(ngModel)]="radioData" value="alreadyRegister"/>No,This is for Renewal 
+     </div>
+     <input  (click)="next($event)" type="button" name="next" class="next action-button" value="Next"/>
+</div>

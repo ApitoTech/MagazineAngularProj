@@ -1,0 +1,102 @@
+<div class="main">
+    <div class="container">
+        <div class="content">
+          <h2 style="color:#808080;">ಚಂದಾದಾರ ಪಟ್ಟಿ</h2>
+          <div class="form_wrap userdetails">
+            <p class="form_item"> 
+              <span class="detail">User</span> 
+              <span class="separator">:</span> 
+              <span class="value" style="color:red">ABC</span> 
+            </p> 
+            <p class="form_item"> 
+              <span class="detail">Society</span> 
+              <span class="separator">:</span> 
+              <span class="value" style="color:red">ABC</span> 
+            </p> 
+            <p class="form_item"> 
+              <span class="detail">Location</span> 
+              <span class="separator">:</span> 
+              <span class="value ml-2" style="color:red">ABC</span> 
+            </p> 
+            <p class="form_item"> 
+              <input matInput  placeholder="Search" style="border: 1px solid black;"  (keyup)="applyFilter($event.target.value)">
+              <!-- <button md-button (click)="applyFilter($event.target.value)">
+                
+                <span>Search</span>
+              </button > -->
+            </p>
+          </div>
+            <!-- <table class="table table-striped  table-sm row-border hover" style="margin-top: 3%;" datatable [dtOptions]="dtOptions">
+                <thead>
+                  <tr>
+                    <th>Invoice</th>
+                    <th>First Name</th>
+                    <th>Last name</th>
+                    <th>District</th>
+                    <th>Phone Number</th>
+                    <th>End Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let group of dataa">
+                       <td>{{group.invoice}}</td>
+                       <td>{{group.firstname}}</td>
+                       <td>{{group.lastname}}</td>
+                       <td>{{group.district}}</td>
+                       <td>{{group.phoneno}}</td>
+                       <td>{{group.enddate}}</td>
+                   </tr>
+                </tbody>
+              </table> -->
+              
+              <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="invoice">
+                  <mat-header-cell *matHeaderCellDef> Invoice </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.invoice }} </mat-cell>
+                </ng-container>
+              
+                <ng-container matColumnDef="firstname">
+                  <mat-header-cell *matHeaderCellDef> First name </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.firstname }} </mat-cell>
+                </ng-container>
+              
+                <ng-container matColumnDef="lastname">
+                  <mat-header-cell *matHeaderCellDef> Last name </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.lastname }} </mat-cell>
+                </ng-container>
+              
+                <ng-container matColumnDef="district">
+                  <mat-header-cell *matHeaderCellDef> District </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.district }} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="phoneno">
+                  <mat-header-cell *matHeaderCellDef> Phone Number </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.phoneno }} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="enddate">
+                  <mat-header-cell *matHeaderCellDef> End date </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.enddate }} </mat-cell>
+                </ng-container>
+              
+                <!-- <ng-container matColumnDef="editAction">
+                  <th mat-header-cell *matHeaderCellDef>  </th>
+                  <td mat-cell *matCellDef="let element"><button mat-button >Edit</button>
+              </ng-container> 
+              <ng-container matColumnDef="renewAction">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef="let element"><button  mat-raised-button color="accent"(click)="renew()">Renew</button> 
+            </ng-container>  -->
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns">
+                  
+                </mat-row>
+              </mat-table>
+              <mat-paginator
+                [pageSizeOptions]="[1,2,3]"
+                showFirstLastButtons
+              ></mat-paginator>
+        </div>
+    </div>
+</div>

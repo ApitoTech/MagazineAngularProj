@@ -1,16 +1,61 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HomeComponent } from './home/home.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { UnionComponent } from './union/union.component';
+import { AdminComponent } from './admin/admin.component';
+import { StatusbarComponent } from './statusbar/statusbar.component';
+import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { OfflineSubscriptionComponent } from './offline-subscription/offline-subscription.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {DataTablesModule} from 'angular-datatables';
+import { SocietyregistrationComponent } from './societyregistration/societyregistration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { ExistingSubscriberComponent } from './existing-subscriber/existing-subscriber.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SubscriptionComponent,
+    UnionComponent,
+    AdminComponent,
+    StatusbarComponent,
+    PersonalDetailsComponent,
+    OfflineSubscriptionComponent,
+    DashboardComponent,
+    SocietyregistrationComponent,
+    PopUpComponent,
+    ExistingSubscriberComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    DataTablesModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatRadioModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

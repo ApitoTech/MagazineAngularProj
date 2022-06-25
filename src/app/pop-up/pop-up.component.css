@@ -1,0 +1,40 @@
+.container{
+    height: 350px;
+    width: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-header {
+    /* padding:9px 15px; */
+    border-bottom:1px solid #eee;
+    background-color: #FFD332;
+    border-radius: 25px;
+}
+
+h2{
+    text-align: center;
+    color: black
+}
+h3{
+    text-align: center;
+    color:grey;
+}
+
+input {
+    vertical-align:top;
+   margin-left: 30%;
+}
+
+.action-button {
+    width: 100px;
+    background: #fff132;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin-left: 30%;
+    margin-top: 5%;
+}

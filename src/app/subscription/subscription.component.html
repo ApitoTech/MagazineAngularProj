@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="container">
+    <div class="content">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1" checked="checked" (click)="selectIndividual()"><b>Individual</b></mat-radio-button>
+        <mat-radio-button value="2" (click)="openDialog()"><b>Society</b></mat-radio-button>
+      </mat-radio-group>
+      <div class="item">
+       
+        <form  [formGroup]="loginForm"   class="m-6" (ngSubmit)="onSubmit()">
+          <div *ngIf="mobile">
+            <div class="m-3">
+              <font color="red" style="margin-right: 90%;" >*</font>
+              <input (keypress)="numberOnly($event)" type="text" [(ngModel)]="login.mobile" formControlName="mobileNumber" name="mobileNumber" class="form-control" placeholder="Mobile Number" />
+              <div *ngIf="mobileNumber.invalid && mobileNumber.touched">
+                <small *ngIf="mobileNumber.errors?.required" class="text-danger">Mobile number is required</small>
+                <small *ngIf="mobileNumber.errors?.minlength || mobileNumber.errors?.maxlength || mobileNumber.errors?.pattern " class="text-danger">Invalid mobile number</small>
+              </div>
+            </div>
+            <button  type="button" class="btn btn-lg" (click)="sendOtp()" type="button">Send OTP</button>
+          </div>
+          <div *ngIf="OTP">
+            <div class="m-3">
+              <input (keypress)="numberOnly($event)" [(ngModel)]="login.otp" type="text" [class.is-invalid]="otp.invalid && otp.touched"formControlName="otp" name="otp" class="form-control" placeholder="OTP" />
+              <div *ngIf="otp.invalid && otp.touched">
+                <small class="text-danger">OTP is required</small>
+              </div>
+            </div>
+            <button  type="button" class="btn btn-lg" type="submit">Submit OTP</button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>

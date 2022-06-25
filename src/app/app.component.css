@@ -1,0 +1,73 @@
+nav{
+  padding-top: 10px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 9999;
+}
+
+.temp{
+
+  margin-top: 100px;
+    width: 80%;
+    /* align-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main {
+  margin-top: 70px; /* Add a top margin to avoid content overlay */
+   padding-top: 16px;
+}
+
+@media screen and (max-width:475px) {
+
+  .main {
+
+    margin-top: 100px; /* Add a top margin to avoid content overlay */
+  }
+}
+
+.navbar-nav{
+  margin-right: 90px;
+  padding-right: 50px;
+}
+
+.logo{
+  width: 64px;
+  height: 68px;
+}
+
+.name {
+  font-size: 30px;
+  padding-left: 20px;
+
+}
+
+.nav-item{
+  font-size: 20px;
+  padding-right: 50px;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .navbar-nav .nav-item{
+    margin-right: 5px;
+    padding-right: 2px;
+  }
+
+}
+
+@media screen and (max-width:650px) {
+
+  .name {
+
+    font-size: 20px;
+    padding-left: 4px;
+  }
+
+  .main {
+
+    padding-top: 25px;
+  }
+}
+
