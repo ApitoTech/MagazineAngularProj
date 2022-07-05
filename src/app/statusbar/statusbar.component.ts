@@ -1,5 +1,6 @@
 import { Component, OnInit,HostListener } from '@angular/core';
 import { FormControl,FormGroup,Validators,FormBuilder } from '@angular/forms';
+import { IndividualUser } from '../individualUser';
 import { OrderService } from '../order.service';
 declare var Razorpay: any;
 
@@ -35,17 +36,19 @@ export class StatusbarComponent implements OnInit {
             lastName: ['',Validators.required],
             email:['',Validators.required],
             dob:['',Validators.required],
+            occupation:[''],
             society:[''],
             designation:[''],
             qualification:[''],
-            refferd:['']
+            referedBy:[''],
+            referedByName:['']
         });
 
         this.addressDetails = this.formBuilder.group({
             address: ['', Validators.required],
             pincode: ['',Validators.required],
             village: [''],
-            talluk: ['',Validators.required],
+            taluk: ['',Validators.required],
             district: ['',Validators.required],
             state:['',Validators.required]
         });
@@ -232,5 +235,30 @@ onPaymentSuccess(event): void {
         this.error = err.error.message;
     }
     );
+}
+onSubmit(){
+
+  //alert(this.individualDetails.controls);
+  //alert(Object.keys(this.individualDetails.controls));
+  //alert(this.individualDetails.controls['firstName'].value);
+  let individualUser = <IndividualUser>{};
+  individualUser.firstName=this.individualDetails.controls['firstName'].value;
+  individualUser.lastName=this.individualDetails.controls['lastName'].value;
+  individualUser.email=this.individualDetails.controls['email'].value;
+  individualUser.dob=this.individualDetails.controls['dob'].value;
+  individualUser.occupation=this.individualDetails.controls['occupation'].value;
+  individualUser.society=this.individualDetails.controls['society'].value;
+  individualUser.designation=this.individualDetails.controls['designation'].value;
+  individualUser.qualification=this.individualDetails.controls['qualification'].value;
+  individualUser.referedBy=this.individualDetails.controls['referedBy'].value;
+  individualUser.referedByName=this.individualDetails.controls['referedByName'].value;
+  individualUser.address=this.addressDetails.controls['address'].value;
+  individualUser.village=this.addressDetails.controls['village'].value;
+  individualUser.pincode=this.addressDetails.controls['pincode'].value;
+  individualUser.taluk=this.addressDetails.controls['taluk'].value;
+  individualUser.district=this.addressDetails.controls['district'].value;
+  individualUser.state=this.addressDetails.controls['state'].value;
+  alert(JSON.stringify(individualUser));
+
 }
 }

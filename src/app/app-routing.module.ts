@@ -8,6 +8,7 @@ import {OfflineSubscriptionComponent} from './offline-subscription/offline-subsc
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {SocietyregistrationComponent} from './societyregistration/societyregistration.component';
 import {ExistingSubscriberComponent} from './existing-subscriber/existing-subscriber.component';
+import {UserDetailsComponent} from './super-admin/user-details/user-details.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: "offlinesubscription",component: OfflineSubscriptionComponent},
   {path: "dashboard",component: DashboardComponent},
   {path: "societyregistration",component: SocietyregistrationComponent},
-  {path: "existingSubscriber",component: ExistingSubscriberComponent}
+  {path: "existingSubscriber",component: ExistingSubscriberComponent},
+  {path: "userDetailsComponent",component: UserDetailsComponent}
 
 ];
 

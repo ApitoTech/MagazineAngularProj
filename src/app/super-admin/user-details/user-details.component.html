@@ -1,0 +1,55 @@
+<div class="main">
+ 
+    <div class="container">
+     
+        <div class="content">
+          <button id="Add" Style="background-color: yellow; ">Add New User</button>
+         
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="userId">
+              <mat-header-cell *matHeaderCellDef> User ID </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.userId }} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="userName">
+              <mat-header-cell *matHeaderCellDef> User name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.userName }} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="designation">
+              <mat-header-cell *matHeaderCellDef> Designation name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.designation }} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="contact">
+              <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.contact }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="read">
+              <mat-header-cell *matHeaderCellDef> Read</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.read }} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="edit">
+              <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.edit }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="add">
+              <mat-header-cell *matHeaderCellDef> Add </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.add }} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="superAdmin">
+              <mat-header-cell *matHeaderCellDef>Super Admin </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.superAdmin }} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns">
+              
+            </mat-row>
+          </mat-table>
+              
+             
+        </div>
+    </div>
+</div>

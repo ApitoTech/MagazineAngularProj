@@ -25,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { ExistingSubscriberComponent } from './existing-subscriber/existing-subscriber.component';
+import { SuperAdminComponent } from './super-admin/super-admin.component';
+import { UserDetailsComponent } from './super-admin/user-details/user-details.component';
+import { UserScreenComponent } from './super-admin/user-screen/user-screen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,9 @@ import { ExistingSubscriberComponent } from './existing-subscriber/existing-subs
     SocietyregistrationComponent,
     PopUpComponent,
     ExistingSubscriberComponent,
+    SuperAdminComponent,
+    UserDetailsComponent,
+    UserScreenComponent,
   ],
   imports: [
     BrowserModule,
