@@ -16,5 +16,8 @@ export interface IndividualUser {
     taluk:string;
     district:string;
     state:string;
+    filliedBy:number;
+    referenceEmp:number;
+    amount:number;
     
   }
