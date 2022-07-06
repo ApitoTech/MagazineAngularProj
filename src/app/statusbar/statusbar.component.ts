@@ -2,6 +2,7 @@ import { Component, OnInit,HostListener } from '@angular/core';
 import { FormControl,FormGroup,Validators,FormBuilder } from '@angular/forms';
 import { IndividualUser } from '../individualUser';
 import { OrderService } from '../order.service';
+import {CommonService} from '../commonservices';
 declare var Razorpay: any;
 
 
@@ -27,7 +28,7 @@ export class StatusbarComponent implements OnInit {
   orderSummary_step = false;
   step = 1;
 
-  constructor(private formBuilder: FormBuilder,private orderService: OrderService) { }
+  constructor(private formBuilder: FormBuilder,private orderService: OrderService,private commonService: CommonService) { }
 
   ngOnInit() {
 
@@ -259,6 +260,17 @@ onSubmit(){
   individualUser.district=this.addressDetails.controls['district'].value;
   individualUser.state=this.addressDetails.controls['state'].value;
   alert(JSON.stringify(individualUser));
+
+  this.commonService.registerIndividualUser(individualUser).subscribe(
+    data => {
+      alert('Individual user register successfull');
+       
+    }
+    ,
+    err => {
+        this.error = err.error.message;
+    }
+    );
 
 }
 }

@@ -22,4 +22,9 @@ export class CommonService {
   public getValidOtp(login: Object) : Observable<any> {
     return this.http.put(`${this.baseUrl}authentication/validateOTP`, login);
  }
+
+ public registerIndividualUser(individualUser: Object) : Observable<any> {
+  return this.http.post(`${this.baseUrl}subscribe/save`, individualUser);
+}
+
 }
