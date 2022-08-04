@@ -18,44 +18,7 @@
   }
 
 }
-/* .container {
-    
-  margin:  auto;
-  width: 1250px;
-  background: rgb(196, 196, 196, 0.4);
-  height: 90vh;
-  display: flex;
-  flex-direction: inherit;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
 
-}
-
-@media screen and (max-width: 1300px) {
-
-  .container{
-
-    margin:0px auto;
-    width: 80%;
-  }
-
-}
-
-
-
-.content {
-  height: 80%;
-  background: white;
-  width: 100%;
-  margin: auto;
-  justify-content: center;
-  position: relative;
-  border: 1px solid #B22222; 
-} */
 
 #msform {
   text-align: center;
@@ -79,29 +42,7 @@
 #msform fieldset:not(:first-of-type) {
   display: none;
 }
-/*inputs*/
-/* #msform input, #msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 11px;
-}
-#msform input:focus, #msform textarea:focus {
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  border: 1px solid #ee0979;
-  outline-width: 0;
-  transition: All 0.5s ease-in;
-  -webkit-transition: All 0.5s ease-in;
-  -moz-transition: All 0.5s ease-in;
-  -o-transition: All 0.5s ease-in;
-} */
+
 /*buttons*/
 #msform .action-button {
   width: 100px;
@@ -207,25 +148,7 @@ left: -5%;
 
 
 
-/* #progressbar li.inactive:before{
-  background: #fff132;
-color: white;
-}  */
-/* #progressbar li.active:before {
-background: #fff132;
-color: white;
-}
 
-#progressbar li.active {
-color:black;
-
-} */
-/*input text*/
-/* input {
-margin: 0;
-padding: 0;
-width: 100px;
-} */
 
 
 
