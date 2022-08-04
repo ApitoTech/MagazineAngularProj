@@ -17,6 +17,13 @@ export class StatusbarComponent implements OnInit {
   paymentId: string;
   error: string;
   title = 'angular13bestcode';
+  invoiceNo:String;
+	phone:String;
+	 email:String;
+	 name:String;
+	subStartDate:String;
+	subEndDate:String;
+
  
   individualDetails!: FormGroup;
   addressDetails!: FormGroup;
@@ -135,69 +142,20 @@ export class StatusbarComponent implements OnInit {
     if(this.step==2){
       this.makePayment_step = false;
     }
-    
    
   }
 
-  // submit(){
-    
-  //   if(this.step==3){
-  //     this.education_step = true;
-  //     if (this.makePaymentDetails.invalid) { return }
-  //     alert("Well done!!")
-  //   }
-  // }
-
-  // Image1Click(){
-  //   alert("image1 click");
-  // }
-
-  Image2Click(){
-   // alert("Image2 click");
-   this.paymentId = ''; 
-   this.error = ''; 
-   this.orderService.createOrder(this.form).subscribe(
-   data => {
-       this.options.key = data.secretKey;
-       this.options.order_id = data.razorpayOrderId;
-       this.options.amount ="1250"; //paise
-       this.options.prefill.name = this.form.name;
-       this.options.prefill.email = this.form.email;
-       this.options.prefill.contact = this.form.phone;
-       var rzp1 = new Razorpay(this.options);
-       rzp1.open();
-                  
-       rzp1.on('payment.failed', function (response){    
-           // Todo - store this information in the server
-           console.log(response.error.code);    
-           console.log(response.error.description);    
-           console.log(response.error.source);    
-           console.log(response.error.step);    
-           console.log(response.error.reason);    
-           console.log(response.error.metadata.order_id);    
-           console.log(response.error.metadata.payment_id);
-           this.error = response.error.reason;
-       }
-       );
-   }
-   ,
-   err => {
-       this.error = err.error.message;
-   }
-   );
-  }
-
-  Image1Click(): void {
+  callPaymentMethod(userid, amount,name, email, phone): void {
     this.paymentId = ''; 
     this.error = ''; 
-    this.orderService.createOrder(this.form).subscribe(
+    this.orderService.createOrder(userid, amount).subscribe(
     data => {
         this.options.key = data.secretKey;
         this.options.order_id = data.razorpayOrderId;
-        this.options.amount ="300";//paise
-        this.options.prefill.name = this.form.name;
-        this.options.prefill.email = this.form.email;
-        this.options.prefill.contact = this.form.phone;
+        this.options.amount =amount;
+        this.options.prefill.name = name;
+        this.options.prefill.email = email;
+        this.options.prefill.contact = phone;
         var rzp1 = new Razorpay(this.options);
         rzp1.open();
                    
@@ -225,9 +183,14 @@ export class StatusbarComponent implements OnInit {
 onPaymentSuccess(event): void {
     this.orderService.updateOrder(event.detail).subscribe(
     data => {
-      alert('Payment successfull');
         this.paymentId = data.message;
         this.makePayment_step = true;
+        this.invoiceNo= data.invoiceNo;
+        this.phone = data.phone;
+        this.email = data.email;
+        this.name = data.name;
+        this.subStartDate = data.subStartDate;
+        this.subEndDate =data.subEndDate;
         if (this.orderSummaryDetails.invalid) { return }
         this.step++;
     }
@@ -237,11 +200,8 @@ onPaymentSuccess(event): void {
     }
     );
 }
-onSubmit(){
 
-  //alert(this.individualDetails.controls);
-  //alert(Object.keys(this.individualDetails.controls));
-  //alert(this.individualDetails.controls['firstName'].value);
+onSubmit(){
   let individualUser = <IndividualUser>{};
   individualUser.firstName=this.individualDetails.controls['firstName'].value;
   individualUser.lastName=this.individualDetails.controls['lastName'].value;
@@ -259,14 +219,19 @@ onSubmit(){
   individualUser.taluk=this.addressDetails.controls['taluk'].value;
   individualUser.district=this.addressDetails.controls['district'].value;
   individualUser.state=this.addressDetails.controls['state'].value;
-  alert(JSON.stringify(individualUser));
+  individualUser.mobileNumber=987654321;
+  individualUser.filliedBy = 2;
+  individualUser.referenceEmp = 2;
+  individualUser.amount = 300;
 
   this.commonService.registerIndividualUser(individualUser).subscribe(
     data => {
-      alert('Individual user register successfull');
-       
-    }
-    ,
+      if(data.errorCode == 201) {
+        this.callPaymentMethod(data.id, individualUser.amount, data.name, data.email, data.phone);
+      }else{
+        alert('error, please contact support team');
+      }     
+    },
     err => {
         this.error = err.error.message;
     }

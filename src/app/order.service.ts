@@ -17,10 +17,10 @@ export class OrderService {
  
     }
    
-    createOrder(order): Observable<any> {
+    createOrder(id, amount): Observable<any> {
         return this.http.post(AppConstants.API_URL + 'order', {
-            userId: 1,
-            amount: order.amount
+            userId: id,
+            amount: amount
         }, httpOptions);
     }
    

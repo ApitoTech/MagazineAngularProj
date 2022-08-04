@@ -17,7 +17,6 @@ export class SubscriptionComponent implements OnInit {
     mobile:boolean=true;
     OTP:boolean=false;
     //mobileNumber: number=0;
-
   constructor(private fb: FormBuilder, private router:Router,private commonService: CommonService,private dialogRef: MatDialog) { }
 
   
@@ -39,22 +38,18 @@ export class SubscriptionComponent implements OnInit {
   }
 
   loginForm = this.fb.group({
-
     mobileNumber : ['', [Validators.required, Validators.maxLength(10),Validators.minLength(10),Validators.maxLength(10), Validators.pattern('^[0-9]*$') ]],
     otp : ['', [Validators.required, Validators.maxLength(10),Validators.minLength(4), Validators.maxLength(4),Validators.pattern('^[0-9]*$')]]
   });
 
 
   sendOtp(): void{
-
     if(this.loginForm.get('mobileNumber').value != null) {
       this.mobile = false;
       this.OTP = true;
       this.commonService.getValidMobileNo(this.loginForm.get('mobileNumber').value).subscribe(res=>{
         alert('response'+JSON.stringify(res));
       });
-
-     
     }
     else {
       alert("enter a valid mobile number");

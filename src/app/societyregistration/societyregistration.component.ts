@@ -146,74 +146,74 @@ export class SocietyregistrationComponent implements OnInit {
   //   alert("image1 click");
   // }
 
-  Image2Click(){
-    alert("Image2 click");
-    this.paymentId = ''; 
-    this.error = ''; 
-    this.orderService.createOrder(this.form).subscribe(
-    data => {
-        this.options.key = data.secretKey;
-        this.options.order_id = data.razorpayOrderId;
-        this.options.amount = "1250"; //paise
-        //this.options.prefill.name = this.form.name;
-        this.options.prefill.email = "abc";
-        this.options.prefill.contact = "839842234s";
-        var rzp1 = new Razorpay(this.options);
-        rzp1.open();
+//   Image2Click(){
+//     alert("Image2 click");
+//     this.paymentId = ''; 
+//     this.error = ''; 
+//     this.orderService.createOrder(this.form).subscribe(
+//     data => {
+//         this.options.key = data.secretKey;
+//         this.options.order_id = data.razorpayOrderId;
+//         this.options.amount = "1250"; //paise
+//         //this.options.prefill.name = this.form.name;
+//         this.options.prefill.email = "abc";
+//         this.options.prefill.contact = "839842234s";
+//         var rzp1 = new Razorpay(this.options);
+//         rzp1.open();
                    
-        rzp1.on('payment.failed', function (response){    
-            // Todo - store this information in the server
-            console.log(response.error.code);    
-            console.log(response.error.description);    
-            console.log(response.error.source);    
-            console.log(response.error.step);    
-            console.log(response.error.reason);    
-            console.log(response.error.metadata.order_id);    
-            console.log(response.error.metadata.payment_id);
-            this.error = response.error.reason;
-        }
-        );
-    }
-    ,
-    err => {
-        this.error = err.error.message;
-    }
-    );
-  }
+//         rzp1.on('payment.failed', function (response){    
+//             // Todo - store this information in the server
+//             console.log(response.error.code);    
+//             console.log(response.error.description);    
+//             console.log(response.error.source);    
+//             console.log(response.error.step);    
+//             console.log(response.error.reason);    
+//             console.log(response.error.metadata.order_id);    
+//             console.log(response.error.metadata.payment_id);
+//             this.error = response.error.reason;
+//         }
+//         );
+//     }
+//     ,
+//     err => {
+//         this.error = err.error.message;
+//     }
+//     );
+//   }
 
-  Image1Click(): void {
-    this.paymentId = ''; 
-    this.error = ''; 
-    this.orderService.createOrder(this.form).subscribe(
-    data => {
-        this.options.key = data.secretKey;
-        this.options.order_id = data.razorpayOrderId;
-        this.options.amount = "300"; //paise
-        //this.options.prefill.name = this.form.name;
-        this.options.prefill.email = "abc@gmail.com";
-        this.options.prefill.contact ="8789685757";
-        var rzp1 = new Razorpay(this.options);
-        rzp1.open();
+//   Image1Click(): void {
+//     this.paymentId = ''; 
+//     this.error = ''; 
+//     this.orderService.createOrder(this.form).subscribe(
+//     data => {
+//         this.options.key = data.secretKey;
+//         this.options.order_id = data.razorpayOrderId;
+//         this.options.amount = "300"; //paise
+//         //this.options.prefill.name = this.form.name;
+//         this.options.prefill.email = "abc@gmail.com";
+//         this.options.prefill.contact ="8789685757";
+//         var rzp1 = new Razorpay(this.options);
+//         rzp1.open();
                    
-        rzp1.on('payment.failed', function (response){    
-            // Todo - store this information in the server
-            console.log(response.error.code);    
-            console.log(response.error.description);    
-            console.log(response.error.source);    
-            console.log(response.error.step);    
-            console.log(response.error.reason);    
-            console.log(response.error.metadata.order_id);    
-            console.log(response.error.metadata.payment_id);
-            this.error = response.error.reason;
-        }
-        );
-    }
-    ,
-    err => {
-        this.error = err.error.message;
-    }
-    );
-}
+//         rzp1.on('payment.failed', function (response){    
+//             // Todo - store this information in the server
+//             console.log(response.error.code);    
+//             console.log(response.error.description);    
+//             console.log(response.error.source);    
+//             console.log(response.error.step);    
+//             console.log(response.error.reason);    
+//             console.log(response.error.metadata.order_id);    
+//             console.log(response.error.metadata.payment_id);
+//             this.error = response.error.reason;
+//         }
+//         );
+//     }
+//     ,
+//     err => {
+//         this.error = err.error.message;
+//     }
+//     );
+// }
 
 @HostListener('window:payment.success', ['$event']) 
 onPaymentSuccess(event): void {
